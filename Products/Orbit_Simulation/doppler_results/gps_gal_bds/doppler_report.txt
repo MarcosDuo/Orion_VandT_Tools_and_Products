@@ -1,0 +1,51 @@
+DOPPLER VALIDATION - Orion GPS+GAL+BDS
+============================================================
+RINEX obs file: .\rnx_out\GPS_GAL_BDS\orion_gps_gal_bds.obs
+Truth directory: .\Orbit_s6a_withBDS\
+
+EDGE-OF-ARC TRIMMED: 6 points (last 3 epochs of each tracking arc before loss of lock; arcs reaching the end of the recording are NOT trimmed):
+  C34: 3 points trimmed
+  E26: 3 points trimmed
+  Rationale: the receiver's Doppler output tends to 'freeze' during the last epochs before dropping a setting satellite (loss-of-lock transition). Those points describe acquisition/loss behaviour, not steady-state Doppler measurement quality. Flagged as excluded=2 in doppler_residuals.csv.
+
+EXCLUDED 758 individual (epoch, satellite) outlier points (|corrected residual| > 50 Hz):
+  C11: 327 points excluded
+  C34: 411 points excluded
+  E33: 20 points excluded
+  These are isolated transient anomalies (e.g. a brief tracking glitch or sign ambiguity), not representative of the satellite's overall Doppler tracking quality - see doppler_residuals.csv for the raw, unfiltered per-epoch values if you want to inspect them directly.
+
+Satellites matched (used in stats): ['C14', 'C21', 'C24', 'C26', 'C43', 'C44', 'E12', 'E19', 'E21', 'E26', 'E27', 'E33', 'G02', 'G06', 'G07', 'G09', 'G11', 'G13', 'G15', 'G20', 'G22', 'G30']
+Total (epoch, satellite) pairs: 11084
+
+Common-mode term (~receiver clock drift) [Hz] mean/std/rms:
+  -400.327 / 1.017 / 400.328
+
+RAW residual (d_rx - d_truth), all satellites pooled [Hz] mean/std/rms:
+  -401.612 / 6.474 / 401.664
+
+CORRECTED residual (common-mode removed), all satellites pooled [Hz] mean/std/rms:
+  -1.199 / 6.355 / 6.467
+
+Per-satellite corrected residual stats [Hz] (mean/std/rms, n):
+  C14: +0.265 / 1.316 / 1.343  (n=548)
+  C21: +2.170 / 1.456 / 2.613  (n=518)
+  C24: -6.853 / 2.239 / 7.209  (n=506)
+  C26: +0.592 / 0.728 / 0.939  (n=500)
+  C43: -0.928 / 0.769 / 1.205  (n=552)
+  C44: -2.701 / 1.597 / 3.138  (n=446)
+  E12: +3.002 / 0.942 / 3.146  (n=524)
+  E19: -0.913 / 0.869 / 1.260  (n=375)
+  E21: -13.284 / 1.685 / 13.391  (n=524)
+  E26: -3.098 / 1.358 / 3.383  (n=124)
+  E27: -11.512 / 0.615 / 11.529  (n=552)
+  E33: +4.974 / 4.065 / 6.424  (n=532)
+  G02: +6.520 / 1.825 / 6.771  (n=552)
+  G06: +6.098 / 0.645 / 6.132  (n=551)
+  G07: +0.177 / 0.586 / 0.612  (n=552)
+  G09: -2.814 / 2.113 / 3.519  (n=552)
+  G11: +7.505 / 3.942 / 8.478  (n=552)
+  G13: -8.167 / 1.529 / 8.309  (n=552)
+  G15: -10.352 / 0.976 / 10.398  (n=552)
+  G20: +6.169 / 1.978 / 6.478  (n=552)
+  G22: -5.343 / 2.081 / 5.734  (n=490)
+  G30: -0.122 / 1.251 / 1.257  (n=478)

@@ -1,0 +1,34 @@
+SENTINEL-6A APPROXIMATE INITIAL ORBIT FROM RTKLIB SPP
+======================================================================
+Input POS file: pos\s6a_spp_ecef.pos
+Total RTKLIB solution rows: 60
+Clean solution rows used: 60
+
+Clean solution statistics:
+  Radius min/max/mean [km]: 7195.862 / 7529.213 / 7345.618
+  Satellites ns min/max: 6 / 8
+
+Reference state selected:
+  GPS epoch: 2024-01-10T00:05:00.001000
+  GPS week / SOW: 2296 / 259500.001
+  ECEF position [m]: -273187.6779, -6394454.4098, -3772978.4400
+  ECEF velocity [m/s]: 3196.252755, 3191.968555, -5430.106325
+  ECI position [m]: 6095425.0622, 1951786.8780, -3772978.4400
+  ECI velocity [m/s]: -4241.682495, 2341.845602, -5430.106325
+
+Approximate osculating Keplerian elements:
+  semi-major axis a [km]: 7335.521171
+  eccentricity e [-]: 0.019530013
+  inclination i [deg]: 65.344104737
+  RAAN Ω [deg]: 182.055912662
+  argument of perigee ω [deg]: 345.860451075
+  true anomaly ν [deg]: 228.110594220
+  mean anomaly M [deg]: 229.792998475
+  argument of latitude u [deg]: 213.971045295
+
+Skydel note:
+  For near-circular orbits, argument of perigee and true anomaly can be unstable.
+  If e is very small, argument of latitude u is often more meaningful than ω and ν separately.
+  Prefer importing the ECEF trajectory CSV if Skydel allows trajectory import.
+
+Trajectory CSV written to: orbit\s6a_ecef_trajectory.csv

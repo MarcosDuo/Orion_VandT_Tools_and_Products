@@ -1,0 +1,42 @@
+DOPPLER VALIDATION - Orion GPS+GAL
+============================================================
+RINEX obs file: .\rnx_out\GPS_GAL\orion_gps_gal.obs
+Truth directory: .\Orbit_s6a\
+
+EXCLUDED 41 individual (epoch, satellite) outlier points (|corrected residual| > 20 Hz):
+  E26: 22 points excluded
+  E33: 19 points excluded
+  These are isolated transient anomalies (e.g. a brief tracking glitch or sign ambiguity), not representative of the satellite's overall Doppler tracking quality - see doppler_residuals.csv for the raw, unfiltered per-epoch values if you want to inspect them directly.
+
+Satellites matched (used in stats): ['E04', 'E07', 'E12', 'E19', 'E21', 'E26', 'E27', 'E33', 'G02', 'G04', 'G06', 'G07', 'G09', 'G11', 'G13', 'G15', 'G20', 'G22', 'G30']
+Total (epoch, satellite) pairs: 8965
+
+Common-mode term (~receiver clock drift) [Hz] mean/std/rms:
+  -393.346 / 0.666 / 393.346
+
+RAW residual (d_rx - d_truth), all satellites pooled [Hz] mean/std/rms:
+  -394.591 / 7.224 / 394.657
+
+CORRECTED residual (common-mode removed), all satellites pooled [Hz] mean/std/rms:
+  -1.256 / 7.257 / 7.365
+
+Per-satellite corrected residual stats [Hz] (mean/std/rms, n):
+  E04: -12.536 / 0.966 / 12.573  (n=463)
+  E07: -10.389 / 0.977 / 10.435  (n=165)
+  E12: +3.465 / 1.488 / 3.771  (n=554)
+  E19: -0.601 / 1.250 / 1.387  (n=554)
+  E21: -12.536 / 1.296 / 12.603  (n=554)
+  E26: -2.387 / 1.349 / 2.741  (n=199)
+  E27: -10.557 / 0.876 / 10.594  (n=345)
+  E33: +5.495 / 3.537 / 6.535  (n=535)
+  G02: +7.067 / 1.477 / 7.220  (n=554)
+  G04: -8.547 / 0.398 / 8.556  (n=59)
+  G06: +6.628 / 1.108 / 6.720  (n=554)
+  G07: +0.736 / 0.565 / 0.927  (n=554)
+  G09: -2.266 / 2.637 / 3.477  (n=554)
+  G11: +8.081 / 3.433 / 8.781  (n=554)
+  G13: -7.609 / 1.000 / 7.675  (n=554)
+  G15: -9.766 / 0.590 / 9.783  (n=554)
+  G20: +6.685 / 2.548 / 7.154  (n=554)
+  G22: -4.315 / 1.883 / 4.708  (n=551)
+  G30: +0.690 / 0.969 / 1.190  (n=554)

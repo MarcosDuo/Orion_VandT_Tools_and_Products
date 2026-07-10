@@ -1,0 +1,49 @@
+AVAILABILITY & SIGNAL QUALITY - Orion GPS+GAL+BDS
+============================================================
+Input RINEX obs: .\rnx_out\GPS_GAL_BDS\orion_gps_gal_bds.obs
+Input RTKLIB pos: .\rnx_out\GPS_GAL_BDS\orion_gps_gal_bds_spp.pos
+
+Observation epochs: 594  (span 594 s, 30 -> 624 s of day)
+
+SATELLITES TRACKED (per epoch):
+  TOTAL: mean 20.7, min 10, max 23
+  BeiDou: mean 6.4, min 0, max 8  (8 unique satellites)
+  Galileo: mean 4.5, min 0, max 6  (6 unique satellites)
+  GPS: mean 9.8, min 8, max 10  (10 unique satellites)
+
+FIX AVAILABILITY (RTKLIB SPP):
+  Solution rows: 594  (of 594 obs epochs)
+  Valid fixes (Q in (1, 2, 5, 6)): 594
+  FIX AVAILABILITY: 100.00 %
+  Time to first fix (from first obs epoch): -0.0 s
+
+C/N0 [dB-Hz] per constellation:
+  BeiDou: mean 38.8, min 8, max 43  (n=3816)
+  Galileo: mean 38.9, min 22, max 44  (n=2658)
+  GPS: mean 41.0, min 1, max 44  (n=5515)
+
+C/N0 [dB-Hz] per satellite (mean / min / max, n):
+  C11: 32.6 / 30 / 36  (n=327)
+  C14: 40.4 / 8 / 42  (n=549)
+  C21: 40.7 / 38 / 43  (n=518)
+  C24: 35.6 / 9 / 40  (n=509)
+  C26: 42.7 / 12 / 43  (n=501)
+  C34: 32.0 / 28 / 36  (n=414)
+  C43: 42.2 / 41 / 43  (n=552)
+  C44: 40.4 / 38 / 42  (n=446)
+  E12: 40.7 / 23 / 41  (n=525)
+  E19: 43.7 / 25 / 44  (n=376)
+  E21: 33.0 / 31 / 35  (n=524)
+  E26: 39.2 / 27 / 40  (n=127)
+  E27: 35.7 / 22 / 37  (n=553)
+  E33: 42.8 / 23 / 44  (n=553)
+  G02: 43.6 / 9 / 44  (n=554)
+  G06: 43.6 / 6 / 44  (n=558)
+  G07: 43.6 / 4 / 44  (n=559)
+  G09: 43.6 / 2 / 44  (n=556)
+  G11: 43.8 / 4 / 44  (n=556)
+  G13: 38.4 / 1 / 41  (n=558)
+  G15: 33.9 / 4 / 37  (n=582)
+  G20: 43.2 / 4 / 44  (n=565)
+  G22: 34.2 / 3 / 37  (n=513)
+  G30: 41.9 / 6 / 44  (n=514)

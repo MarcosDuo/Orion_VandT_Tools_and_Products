@@ -1,0 +1,11 @@
+COMPARISON B - SIMULATION FIDELITY (Orion GPS+GAL+BDS)
+Skydel ground truth (receiver_antenna.csv) vs real SP3 (S6ACPOD22963.sp3, time system: GPS, sat: L40)
+============================================================================================================================================================
+
+Epochs compared: 600
+
+Residual statistics [m]  (mean / std / RMS):
+  Radial      (R): -2856.0553 / 161.5034 / 2860.6180
+  Along-track (T): -70701.8867 / 769.5851 / 70706.0750
+  Cross-track (N): +10796.3090 / 1111.5695 / 10853.3808
+  3D norm        : +71585.3387 / 931.3079 / 71591.3965

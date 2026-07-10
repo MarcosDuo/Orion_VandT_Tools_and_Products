@@ -1,0 +1,34 @@
+SENTINEL-6A APPROXIMATE INITIAL ORBIT FROM RTKLIB SPP
+======================================================================
+Input POS file: rnx_out\GPS_GAL_BDS\orion_gps_gal_bds_spp.pos
+Total RTKLIB solution rows: 594
+Clean solution rows used: 594
+
+Clean solution statistics:
+  Radius min/max/mean [km]: 7714.902 / 7720.155 / 7715.165
+  Satellites ns min/max: 9 / 22
+
+Reference state selected:
+  GPS epoch: 2024-01-10T00:05:27.999000
+  GPS week / SOW: 2296 / 259527.999
+  ECEF position [m]: -242984.2205, -6536755.1920, -4090683.1688
+  ECEF velocity [m/s]: 3088.107650, 3233.815150, -5348.858450
+  ECI position [m]: 6214534.4624, 2041511.9855, -4090683.1688
+  ECI velocity [m/s]: -4253.651826, 2226.509809, -5348.858450
+
+Approximate osculating Keplerian elements:
+  semi-major axis a [km]: 7714.421758
+  eccentricity e [-]: 0.000173736
+  inclination i [deg]: 66.038371637
+  RAAN Ω [deg]: 182.049030074
+  argument of perigee ω [deg]: 333.121263724
+  true anomaly ν [deg]: 242.345244636
+  mean anomaly M [deg]: 242.362880003
+  argument of latitude u [deg]: 215.466508360
+
+Skydel note:
+  For near-circular orbits, argument of perigee and true anomaly can be unstable.
+  If e is very small, argument of latitude u is often more meaningful than ω and ν separately.
+  Prefer importing the ECEF trajectory CSV if Skydel allows trajectory import.
+
+Trajectory CSV written to: orbit\orion_gps_gal_bds_traj.csv
