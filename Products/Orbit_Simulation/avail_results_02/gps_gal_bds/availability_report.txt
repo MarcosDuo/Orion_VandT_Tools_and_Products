@@ -1,0 +1,54 @@
+AVAILABILITY & SIGNAL QUALITY - Orion GPS+GAL+BDS
+============================================================
+TIME CUTOFF APPLIED: epochs after SoD 582 s excluded
+  (42 of 594 epochs removed: recording continued after
+  the simulated scenario ended; those epochs show loss of all simulated
+  signals and residual noise-floor tracking, and do not describe
+  receiver behaviour under test conditions)
+
+Input RINEX obs: .\Products\Orbit_Simulation\rnx_out\GPS_GAL_BDS\orion_gps_gal_bds.obs
+Input RTKLIB pos: .\Products\Orbit_Simulation\rnx_out\GPS_GAL_BDS\orion_gps_gal_bds_spp.pos
+
+Observation epochs: 552  (span 552 s, 2024-01-10 00:00:30 -> 2024-01-10 00:09:42)
+
+SATELLITES TRACKED (per epoch):
+  TOTAL: mean 21.5, min 11, max 23
+  BeiDou: mean 6.9, min 1, max 8  (8 unique satellites)
+  Galileo: mean 4.8, min 2, max 6  (6 unique satellites)
+  GPS: mean 9.8, min 8, max 10  (10 unique satellites)
+
+FIX AVAILABILITY (RTKLIB SPP, evaluated on obs epochs):
+  Obs epochs with a valid fix (Q in (1, 2, 5, 6)): 552 of 552
+  FIX AVAILABILITY: 100.00 %
+  Time to first fix (from first obs epoch): 0.0 s
+
+C/N0 [dB-Hz] per constellation (first frequency):
+  BeiDou: mean 38.8, min 28, max 43  (n=3811)
+  Galileo: mean 39.0, min 27, max 44  (n=2654)
+  GPS: mean 41.7, min 34, max 44  (n=5384)
+
+C/N0 [dB-Hz] per satellite (mean / min / max, n):
+  C11: 32.6 / 30 / 36  (n=327)
+  C14: 40.5 / 38 / 42  (n=548)
+  C21: 40.7 / 38 / 43  (n=518)
+  C24: 35.7 / 32 / 40  (n=506)
+  C26: 42.7 / 42 / 43  (n=500)
+  C34: 32.0 / 28 / 36  (n=414)
+  C43: 42.2 / 41 / 43  (n=552)
+  C44: 40.4 / 38 / 42  (n=446)
+  E12: 40.7 / 40 / 41  (n=524)
+  E19: 43.8 / 43 / 44  (n=375)
+  E21: 33.0 / 31 / 35  (n=524)
+  E26: 39.2 / 27 / 40  (n=127)
+  E27: 35.7 / 34 / 37  (n=552)
+  E33: 42.9 / 40 / 44  (n=552)
+  G02: 43.7 / 42 / 44  (n=552)
+  G06: 44.0 / 44 / 44  (n=552)
+  G07: 44.0 / 43 / 44  (n=552)
+  G09: 43.8 / 42 / 44  (n=552)
+  G11: 44.0 / 44 / 44  (n=552)
+  G13: 38.8 / 36 / 41  (n=552)
+  G15: 35.1 / 34 / 37  (n=552)
+  G20: 44.0 / 44 / 44  (n=552)
+  G22: 35.3 / 34 / 37  (n=490)
+  G30: 44.0 / 43 / 44  (n=478)

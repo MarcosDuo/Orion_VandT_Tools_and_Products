@@ -1,0 +1,47 @@
+AVAILABILITY & SIGNAL QUALITY - Orion GPS+GAL
+============================================================
+TIME CUTOFF APPLIED: epochs after SoD 582 s excluded
+  (3 of 557 epochs removed: recording continued after
+  the simulated scenario ended; those epochs show loss of all simulated
+  signals and residual noise-floor tracking, and do not describe
+  receiver behaviour under test conditions)
+
+Input RINEX obs: .\Products\Orbit_Simulation\rnx_out\GPS_GAL\orion_gps_gal.obs
+Input RTKLIB pos: .\Products\Orbit_Simulation\rnx_out\GPS_GAL\orion_gps_gal_spp.pos
+
+Observation epochs: 554  (span 553 s, 2024-01-10 00:00:29 -> 2024-01-10 00:09:42)
+
+SATELLITES TRACKED (per epoch):
+  TOTAL: mean 16.3, min 14, max 18
+  Galileo: mean 6.2, min 5, max 7  (8 unique satellites)
+  GPS: mean 10.1, min 9, max 11  (11 unique satellites)
+
+FIX AVAILABILITY (RTKLIB SPP, evaluated on obs epochs):
+  Obs epochs with a valid fix (Q in (1, 2, 5, 6)): 554 of 554
+  FIX AVAILABILITY: 100.00 %
+  Time to first fix (from first obs epoch): 0.0 s
+
+C/N0 [dB-Hz] per constellation (first frequency):
+  Galileo: mean 38.6, min 26, max 45  (n=3410)
+  GPS: mean 41.8, min 34, max 44  (n=5596)
+
+C/N0 [dB-Hz] per satellite (mean / min / max, n):
+  E04: 32.0 / 30 / 34  (n=463)
+  E07: 34.4 / 33 / 35  (n=165)
+  E12: 40.9 / 40 / 42  (n=554)
+  E19: 43.7 / 43 / 44  (n=554)
+  E21: 33.6 / 31 / 36  (n=554)
+  E26: 39.8 / 26 / 42  (n=221)
+  E27: 36.7 / 36 / 38  (n=345)
+  E33: 43.4 / 41 / 45  (n=554)
+  G02: 43.8 / 42 / 44  (n=554)
+  G04: 37.0 / 37 / 37  (n=59)
+  G06: 44.0 / 44 / 44  (n=554)
+  G07: 44.0 / 43 / 44  (n=554)
+  G09: 43.9 / 43 / 44  (n=554)
+  G11: 44.0 / 44 / 44  (n=554)
+  G13: 39.1 / 37 / 41  (n=554)
+  G15: 35.4 / 34 / 37  (n=554)
+  G20: 44.0 / 44 / 44  (n=554)
+  G22: 35.9 / 34 / 37  (n=551)
+  G30: 44.0 / 43 / 44  (n=554)

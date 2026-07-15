@@ -189,6 +189,12 @@ def main():
     parser.add_argument("--valid-q", default="1,2,5,6")
     parser.add_argument("--label", default="receiver")
     parser.add_argument("--out-dir", required=True)
+    parser.add_argument("--tmax-sod", type=float, default=None,
+                        help="Last valid epoch as seconds-of-day (single-day data). "
+                             "Epochs after this instant are excluded from all statistics "
+                             "and plots; the exclusion is documented in the report. "
+                             "Use when the recording extended beyond the simulated "
+                             "scenario end (recording overrun).")
     args = parser.parse_args()
 
     out_dir = Path(args.out_dir)
@@ -221,6 +227,26 @@ def main():
 
     elif args.obs:
         epochs, tracked, cn0 = parse_rinex_obs(args.obs)
+
+        # ---- optional time cutoff (recording overrun after scenario end) ----
+        n_excluded = 0
+        if args.tmax_sod is not None:
+            def sod(e):
+                return e.hour * 3600 + e.minute * 60 + e.second + e.microsecond / 1e6
+            n_before = len(epochs)
+            keep = [e for e in epochs if sod(e) <= args.tmax_sod]
+            excluded = [e for e in epochs if sod(e) > args.tmax_sod]
+            n_excluded = len(excluded)
+            epochs = keep
+            tracked = {e: tracked[e] for e in keep if e in tracked}
+            cn0 = {(e, s): v for (e, s), v in cn0.items() if e in set(keep)}
+            report.append(f"TIME CUTOFF APPLIED: epochs after SoD {args.tmax_sod:.0f} s excluded")
+            report.append(f"  ({n_excluded} of {n_before} epochs removed: recording continued after")
+            report.append(f"  the simulated scenario ended; those epochs show loss of all simulated")
+            report.append(f"  signals and residual noise-floor tracking, and do not describe")
+            report.append(f"  receiver behaviour under test conditions)")
+            report.append("")
+
         n_epochs = len(epochs)
         span = (epochs[-1] - epochs[0]).total_seconds() if n_epochs > 1 else 0.0
         report.append(f"Input RINEX obs: {args.obs}")
