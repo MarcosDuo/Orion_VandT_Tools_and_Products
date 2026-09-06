@@ -1,0 +1,11 @@
+COMPARISON A - RECEIVER PERFORMANCE (Orion GPS+GAL (iono off))
+SPP (orion_gps_gal_spp_ionoff.pos) vs Skydel ground truth (receiver_antenna.csv)
+===============================================================================================================================================
+
+Epochs compared: 554
+
+Residual statistics [m]  (mean / std / RMS):
+  Radial      (R): +3.5464 / 1.3702 / 3.8019
+  Along-track (T): +0.4177 / 3.0959 / 3.1240
+  Cross-track (N): -0.1211 / 0.5495 / 0.5626
+  3D norm        : +4.8248 / 1.1187 / 4.9528

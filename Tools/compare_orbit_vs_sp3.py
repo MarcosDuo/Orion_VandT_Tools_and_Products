@@ -78,36 +78,64 @@ def project_rtn(delta, r_ref, v_ref):
 # RTKLIB .pos parsing
 # ---------------------------------------------------------------------------
 
+_A  = 6378137.0
+_F  = 1.0 / 298.257223563
+_E2 = _F * (2.0 - _F)
+
+def _llh2ecef(lat_deg, lon_deg, h):
+    lat = math.radians(lat_deg)
+    lon = math.radians(lon_deg)
+    N = _A / math.sqrt(1.0 - _E2 * math.sin(lat) ** 2)
+    return ((N + h) * math.cos(lat) * math.cos(lon),
+            (N + h) * math.cos(lat) * math.sin(lon),
+            (N * (1.0 - _E2) + h) * math.sin(lat))
+
 def parse_rtkpos(path, min_ns=6, r_min=6.8e6, r_max=8.5e6, valid_q=(1, 2, 5, 6)):
+    """Read an RTKLIB .pos file in either x/y/z-ECEF or lat/lon/height format,
+    with the time stamp as either GPS week/sow or calendar date. Positions are
+    always returned in ECEF."""
     rows = []
+    geodetic = False
     with open(path, "r", encoding="latin1") as f:
         for line in f:
             line = line.strip()
-            if not line or line.startswith("%"):
+            if line.startswith("%"):
+                low = line.lower()
+                if "lat/lon/height" in low:
+                    geodetic = True
+                elif "x/y/z-ecef" in low:
+                    geodetic = False
+                continue
+            if not line:
                 continue
             parts = line.split()
             if len(parts) < 7:
                 continue
             try:
-                week = int(parts[0])
-                sow = float(parts[1])
-                x = float(parts[2])
-                y = float(parts[3])
-                z = float(parts[4])
-                q = int(parts[5])
+                if "/" in parts[0]:                      # 2024/01/10 00:00:28.999
+                    stamp = parts[0] + " " + parts[1]
+                    try:
+                        dt = datetime.strptime(stamp, "%Y/%m/%d %H:%M:%S.%f")
+                    except ValueError:
+                        dt = datetime.strptime(stamp, "%Y/%m/%d %H:%M:%S")
+                else:                                    # 2296 259228.999
+                    dt = GPS_EPOCH + timedelta(weeks=int(parts[0]),
+                                               seconds=float(parts[1]))
+                c1, c2, c3 = float(parts[2]), float(parts[3]), float(parts[4])
+                q  = int(parts[5])
                 ns = int(parts[6])
             except ValueError:
                 continue
+
+            x, y, z = _llh2ecef(c1, c2, c3) if geodetic else (c1, c2, c3)
 
             rnorm = norm([x, y, z])
             if q not in valid_q or ns < min_ns or not (r_min <= rnorm <= r_max):
                 continue
 
-            dt = GPS_EPOCH + timedelta(weeks=week, seconds=sow)
             rows.append({"dt": dt, "x": x, "y": y, "z": z, "q": q, "ns": ns})
     rows.sort(key=lambda r: r["dt"])
     return rows
-
 # ---------------------------------------------------------------------------
 # Skydel ground-truth receiver_antenna.csv parsing
 # ---------------------------------------------------------------------------
